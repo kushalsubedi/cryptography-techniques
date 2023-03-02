@@ -35,24 +35,34 @@ def cesarDecrypt(cipher:str,key:int)->str:
     return plain
 
 def main():
-    print("\n\n \t\t !!! cesar cipher !!! \t\t \n\n")
-    print(" Enter your choice !! \n1. For Cesar Encryption \n2. For Cesar Decryption \n ")
-    choice=int(input("choice = "))
-   
-    if (choice == 1):
-        plain = input("Enter a plain text :: ")
-        key = int(input("Enter a Encryption Key ::"))
-        cipher= cesarEncrypt(plain,key)
-        print(f"the decryped message of {plain} with key {key} is {cipher} \n")
-    elif (choice == 2):
-        cipher = input ("Enter message that need to be decrypted : ")
-        key = int(input("Enter a Encryption Key ::"))
-        plain=cesarDecrypt(cipher,key)
-        print(f"the decryped message of {cipher} with key {key} is {plain} \n")
-    else :
-        print("cesar cipher Encryption/Decryption failure !!! ")
+        print("\n\n \t\t !!! cesar cipher !!! \t\t \n\n")
+        print(" Enter your choice !! \n1. For Cesar Encryption \n2. For Cesar Decryption \n ")
+
+
+        choice=int(input("Chice = "))
+        if (choice == 1):
+            plain = input("Enter a plain text :: ")
+            key = int(input("Enter a Encryption Key ::"))
+            cipher= cesarEncrypt(plain,key)
+            print(f"the decryped message of {plain} with key {key} is {cipher} \n")
+        elif (choice == 2):
+            cipher = input ("Enter message that need to be decrypted : ")
+            key = int(input("Enter a Encryption Key ::"))
+            plain=cesarDecrypt(cipher,key)
+            print(f"the decryped message of {cipher} with key {key} is {plain} \n")
+        else :
+            print("cesar cipher Encryption/Decryption failure !!! ")
 
 
 if __name__ == "__main__":
     main()
+    while(True):
+        qn= input("continue (Y?N)")
+        if qn.lower()=='y':
+            main()
+        else:
+            print("!!! Bye !!!")
+            exit(0)
+        
+    
 
